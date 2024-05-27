@@ -1,0 +1,132 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00acc1;
+    padding: 10px;
+    color: white;
+}
+
+.search-bar input {
+    padding: 5px;
+    width: 70%;
+    border: none;
+    border-radius: 5px;
+}
+
+.menu-icon img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menu {
+    display: none;
+    background-color: #00acc1;
+    padding: 10px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 5px 0;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.map-section {
+    margin-bottom: 20px;
+}
+
+.map-section h2 {
+    margin-top: 0;
+}
+
+.map-section img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.input-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.input-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section label {
+    margin-top: 10px;
+}
+
+.input-section input {
+    padding: 5px;
+    margin-top: 5px;
+    border: 1px solid #00acc1;
+    border-radius: 5px;
+}
+
+.input-section button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #00acc1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#prediction {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #00acc1;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 20px;
+}
+
+#today_p, #tomorrow_p, #in_two_days_p {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #00acc1;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    height: 20px;
+}
+
+#map_div {
+    margin-bottom: 3%;
+}

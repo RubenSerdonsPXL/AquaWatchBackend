@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="stylessignin.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="assets/logo.png" alt="AppName">
+            </div>
+            <h2>Sign In</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="name@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="loginPassword" name="password" placeholder="********" required>
+                </div>
+                <button type="submit" class="btn">Sign In</button>
+                <div class="footer-links">
+                   
+                    <a href="signup.html">Sign Up</a>
+                    <a href="./Index.html">Back to home page</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="messageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+   <!-- <script src="scripts.js"></script> -->
+</body>
+</html>
+<script> 
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from submitting and reloading the page
+    const email = document.getElementById('loginEmail').value;
+    const password = document.getElementById('loginPassword').value;
+
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    console.log('Users at login:', users); // Debugging line
+    const user = users.find(user => user.email === email && user.password === password);
+
+    if (user) {
+        sessionStorage.setItem('current_user', user.username);
+         window.location.href = 'Index.html';
+    } else {
+        displayMessage('error', 'Invalid email or password!');
+    }
+});
+
+function displayMessage(type, message) {
+    const modal = document.getElementById('messageModal');
+    const modalMessage = document.getElementById('modalMessage');
+    modalMessage.textContent = message;
+    modal.style.display = 'block';
+
+    const span = document.getElementsByClassName('close')[0];
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+}
+
+</script>
