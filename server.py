@@ -42,6 +42,10 @@ async def predict_hyacinth(windspeed: float, winddir: float):
 # url: http://localhost:8000/predict_hyacinth/
 # POST method
 
+@app.get("/")
+async def root():
+    return {"message": "App working..."}
+
 @app.post("/predict_hyacinth/")
 async def predict(prediction_request: PredictionRequest):
     print("Processing prediction request...")
